@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GUESS-IT</title>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="manifest" href="./worker.webmanifest">
 </head>
 
 <body>
@@ -16,10 +17,10 @@
         <div class="hd">COLOR GAME</div>
     </header>
     <div class="mainbar">
-        <button class="lf" onclick="setState()">NEW GAME</button>
+        <button class="lf btn" onclick="setState()">NEW GAME</button>
         <div class="rf">
-            <button onclick="setState(3)">EASY</button>
-            <button onclick="setState(6)">HARD</button>
+            <button class="btn" onclick="setState(3)">EASY</button>
+            <button class="btn" onclick="setState(6)">HARD</button>
         </div>
     </div>
     <div id="main">
