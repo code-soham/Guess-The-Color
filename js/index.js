@@ -1,3 +1,15 @@
+//service worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("service_worker.js")
+    .then((registration) => {
+      console.log("Service Worker Registered");
+    })
+    .catch((err) => {
+      console.log("Service Worker Failed to Register", err);
+    });
+}
+
 var r = [],
   g = [],
   b = [];
@@ -43,7 +55,7 @@ function verify(color) {
     alert("Wrong");
   }
 }
-function setState(x=diff) {
+function setState(x = diff) {
   diff = x;
   setColor(x);
 }
