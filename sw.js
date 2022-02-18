@@ -1,3 +1,4 @@
+const self=this
 self.addEventListener("install", e=>{
     // console.log("Install!");
     e.waitUntil(
@@ -17,6 +18,7 @@ self.addEventListener("fetch", e=>{
     // console.log("Fetching");
     e.respondWith(
         caches.match(e.request).then(cacheRes=>{
+            console.log("opened cache");
             return cacheRes || fetch(e.request);
         })
     );
