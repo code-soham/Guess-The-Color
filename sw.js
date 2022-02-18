@@ -5,10 +5,7 @@ self.addEventListener("install", e=>{
         caches.open("static").then(cache=>{
             // console.log("caching shell files");
             cache.addAll([
-                "./",
                 "./index.html",
-                "./js/index.js",
-                "./css/index.css",
             ]);
         })
     );  

@@ -38,16 +38,29 @@ function setBoxes(x = 3) {
   for (let i = 0; i < x; i++) {
     var box = document.createElement("div");
     box.classList.add("box");
-    box.setAttribute("onclick", "verify(this.style.backgroundColor)");
+    box.setAttribute("onclick", "verify(this)");
     box.style.backgroundColor = `rgb(${r[i]},${g[i]},${b[i]})`;
     main.appendChild(box);
   }
 }
-function verify(color) {
-  if (color == ans) {
-    alert("Correct");
+function win(){
+  const head= document.querySelector("header");
+  head.style.backgroundColor = ans;
+  const boxes= document.getElementById("main").children;
+  for(let i=0;i<boxes.length;i++){
+    boxes[i].style.backgroundColor = ans;
+    boxes[i].classList.remove("wrong");
+    boxes[i].classList.add("box");
+  }
+}
+function verify(obj) {
+  if (obj.style.backgroundColor == ans) {
+    win();
   } else {
-    alert("Wrong");
+    obj.classList.remove("box");
+    obj.style.backgroundColor = "rgba(0,0,0,0)";
+    obj.classList.add("wrong");
+    // alert(obj.classList);
   }
 }
 function setState(x = diff) {

@@ -59,7 +59,16 @@ body {
   transform: rotate(45deg) scale(1.05);
 }
 
-
+/* incorrect */
+.wrong {
+  background-image: url("../images/wrong.png") ;   
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  margin: 5vh;
+}
 
 /*small screen*/
 @media screen and (max-width: 600px){
