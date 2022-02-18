@@ -17,6 +17,8 @@ var diff = 3; //default difficulty
 [b,b,b,b,b,b]
 */
 function setColor(x = 3) {
+  const head= document.querySelector("header");
+  head.style.backgroundColor = 'rgba(255, 255, 255, 0.072)';
   const col_div = document.querySelector(".col_gen");
   generate(x);
   col_div.innerHTML = `rgb(${r[ans_index]},${g[ans_index]},${b[ans_index]})`;
