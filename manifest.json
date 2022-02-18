@@ -9,13 +9,13 @@
             "src": "images/icon.png",
             "sizes": "540x540",
             "type": "image/png",
-            "purpose":"any"
+            "purpose":"any maskable"
         },
         {
             "src": "images/icon192.png",
             "sizes": "192x192",
             "type": "image/png",
-            "purpose":"any"
+            "purpose":"any maskable"
         }
     ],
     "background_color": "#ffffff",
