@@ -4,6 +4,7 @@ const cacheFiles = [
   "./index.html",
   "./css/index.css",
   "./js/index.js",
+  "./js/app.js",
   "./images/icon512.png",
   "./images/icon192.png",
   "./images/wrong.png"
