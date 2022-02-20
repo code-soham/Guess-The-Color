@@ -15,7 +15,7 @@ if ("serviceWorker" in navigator) {
   // wait for the page to load
   window.addEventListener("load", async () => {
     // register the service worker from the file specified
-    const registration = await navigator.serviceWorker.register("../sw.js");
+    const registration = await navigator.serviceWorker.register("../Guess-The-Color/sw.js");
     // check if the service worker is updated
     // ensure the case when the updatefound event was missed is also handled
     // by re-invoking the prompt when there's a waiting Service Worker
