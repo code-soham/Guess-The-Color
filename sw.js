@@ -1,4 +1,4 @@
-const cacheName = "guessIt-game-v2";
+const cacheName = "guessIt-game-v2.2";
 const cacheFiles = [
   "./",
   "./index.html",
@@ -10,6 +10,7 @@ const cacheFiles = [
 // const self = this;
 self.addEventListener("install", (e) => {
   // console.log("Install!");
+  self.skipWaiting();
   e.waitUntil(
     caches.open(cacheName).then((cache) => {
       // console.log("caching shell files");
