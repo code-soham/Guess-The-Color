@@ -26,9 +26,19 @@
             <button class="btn" onclick="setState(6)">HARD</button>
         </div>
     </div>
+    <div class="verdict">GUESS-IT</div>
     <div id="main">
     </div>
-    <div class="verdict"></div>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("./sw.js")
+                    .then((reg) => console.log("Success: ", reg.scope))
+                    .catch((err) => console.log("Failure: ", err));
+            });
+        }
+    </script>
     <script src="./js/index.js"></script>
 </body>
 

@@ -1,25 +1,22 @@
-if('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-          .then((reg) => console.log("Success: ", reg.scope))
-          .catch((err) => console.log("Failure: ", err));
-  })
-}
 var r = [],
   g = [],
   b = [];
 var ans_index; // answer index
 var ans; //stores answer string
 var diff = 3; //default difficulty
+const panel = document.querySelector(".verdict");
+const head = document.querySelector("header");
+const col_div = document.querySelector(".col_gen");
+const main = document.querySelector("#main");
+const boxes = document.getElementById("main").children;
+
 /*
 [r,r,r,r,r,r]
 [g,g,g,g,g,g]
 [b,b,b,b,b,b]
 */
 function setColor(x = 3) {
-  const head= document.querySelector("header");
-  head.style.backgroundColor = 'rgba(255, 255, 255, 0.072)';
-  const col_div = document.querySelector(".col_gen");
+  head.style.backgroundColor = "rgba(255, 255, 255, 0.072)";
   generate(x);
   col_div.innerHTML = `rgb(${r[ans_index]},${g[ans_index]},${b[ans_index]})`;
   setBoxes(x);
@@ -35,7 +32,6 @@ function generate(x = 3) {
   ans = "rgb(" + r[ans_index] + ", " + g[ans_index] + ", " + b[ans_index] + ")";
 }
 function setBoxes(x = 3) {
-  const main = document.querySelector("#main");
   main.innerHTML = "";
   for (let i = 0; i < x; i++) {
     var box = document.createElement("div");
@@ -45,28 +41,33 @@ function setBoxes(x = 3) {
     main.appendChild(box);
   }
 }
-function win(){
-  const head= document.querySelector("header");
+function win(panel) {
   head.style.backgroundColor = ans;
-  const boxes= document.getElementById("main").children;
-  for(let i=0;i<boxes.length;i++){
+  for (let i = 0; i < boxes.length; i++) {
     boxes[i].style.backgroundColor = ans;
     boxes[i].classList.remove("wrong");
     boxes[i].classList.add("box");
   }
+  panel.innerText = "Winner!";
+  panel.style.textShadow = "2px 2px red";
+}
+function wrong(panel) {
+  panel.innerText = "Try Again!";
 }
 function verify(obj) {
   if (obj.style.backgroundColor == ans) {
-    win();
+    win(panel);
   } else {
     obj.classList.remove("box");
     obj.style.backgroundColor = "rgba(0,0,0,0)";
     obj.classList.add("wrong");
     // alert(obj.classList);
+    wrong(panel);
   }
 }
 function setState(x = diff) {
   diff = x;
+  panel.innerText = "GUESS-IT";
   setColor(x);
 }
 setColor();

@@ -14,26 +14,26 @@ body {
   color: white;
   background-color: rgba(255, 255, 255, 0.072);
 }
-.mainbar{
-    margin-top: 20px;
-    padding: 0px;
-    /* background-color: rgba(255, 255, 255); */
-    display: flex;
-    justify-content: space-evenly;
+.mainbar {
+  margin-top: 20px;
+  padding: 0px;
+  /* background-color: rgba(255, 255, 255); */
+  display: flex;
+  justify-content: space-evenly;
 }
-.rf{
-    width:20vw;
-    max-width: 200px;
-    display: flex;
-    justify-content: space-between;
+.rf {
+  width: 20vw;
+  max-width: 200px;
+  display: flex;
+  justify-content: space-between;
 }
-.btn{
-    padding: 10px;
-    border-radius: 40px;
-    background-color: rgb(8, 220, 188);
-    cursor: pointer;
+.btn {
+  padding: 10px;
+  border-radius: 40px;
+  background-color: rgb(8, 220, 188);
+  cursor: pointer;
 }
-.btn:hover{
+.btn:hover {
   color: white;
   background-color: rgb(0, 90, 76);
 }
@@ -55,15 +55,18 @@ body {
   margin: 5vh;
   transition: all 0.3s ease-in-out;
   /* border: 5px white solid; */
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-.box:hover{
+.box:hover,
+.box:focus {
   transform: rotate(45deg) scale(1.05);
 }
 
 /* incorrect */
 .wrong {
-  background-image: url("../images/wrong.png") ;   
+  background-image: url("../images/wrong.png");
   background-size: cover;
   height: 100px;
   width: 100px;
@@ -71,15 +74,29 @@ body {
   background-color: rgba(255, 255, 255, 0);
   margin: 5vh;
 }
-.verdict{
-  height: 30px;
-  background-color: aliceblue;
-  width: 40px;
+.verdict {
+  height: 50px;
+  width: 250px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+  color:aliceblue;
+  font-size: 40px;
+  text-shadow: 2px 2px black;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 5px solid white;
+  background-color: #487346;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='87' height='87' viewBox='0 0 200 200'%3E%3Cg %3E%3Cpolygon fill='%234c8e43' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%236aac5f' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%234c8e43' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%236aac5f' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%2389CC7C' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%23768c3a' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%2396ac58' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%23B6CC76' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%2396ac58' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%23768c3a' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%23B6CC76' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%23768c3a' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%23B6CC76' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%2396ac58' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%23B6CC76' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E");
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 /*small screen*/
-@media screen and (max-width: 600px){
-  #main{
+@media screen and (max-width: 600px) {
+  #main {
     grid-template-columns: 1fr 1fr;
     grid-template-columns: 150px 150px;
+    zoom: 0.7;
   }
 }
