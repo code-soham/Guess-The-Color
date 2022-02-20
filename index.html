@@ -29,16 +29,9 @@
     <div class="verdict">GUESS-IT</div>
     <div id="main">
     </div>
-    <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker
-                    .register("./sw.js")
-                    .then((reg) => console.log("Success: ", reg.scope))
-                    .catch((err) => console.log("Failure: ", err));
-            });
-        }
-    </script>
+    <div id="snackbar">A new version of this app is available. Click <a id="reload">here</a> to update.
+    </div>
+    <script src="./js/app.js"></script>
     <script src="./js/index.js"></script>
 </body>
 

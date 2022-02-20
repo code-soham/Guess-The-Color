@@ -1,4 +1,4 @@
-const cacheName = "guessIt-game-v2.2";
+const cacheName = "guessIt-game_v6.9";
 const cacheFiles = [
   "./",
   "./index.html",
@@ -6,11 +6,12 @@ const cacheFiles = [
   "./js/index.js",
   "./images/icon512.png",
   "./images/icon192.png",
+  "./images/wrong.png"
 ];
 // const self = this;
 self.addEventListener("install", (e) => {
   // console.log("Install!");
-  self.skipWaiting();
+  // self.skipWaiting(); //auto activate latest service worker from web
   e.waitUntil(
     caches.open(cacheName).then((cache) => {
       // console.log("caching shell files");
@@ -44,4 +45,10 @@ self.addEventListener("activate", (e) => {
       );
     })
   );
+});
+
+self.addEventListener("message", (event) => {
+  if (event.data === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
 });
