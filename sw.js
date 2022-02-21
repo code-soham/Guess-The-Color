@@ -1,4 +1,4 @@
-const cacheName = "guessIt-game_v1.2";
+const cacheName = "guessIt-game_v1.1";
 const cacheFiles = [
   "./",
   "./index.html",
@@ -12,10 +12,10 @@ const cacheFiles = [
 // const self = this;
 self.addEventListener("install", (e) => {
   // console.log("Install!");
-  // self.skipWaiting(); //auto activate latest service worker from web
+  self.skipWaiting(); //auto activate latest service worker from web
   e.waitUntil(
     caches.open(cacheName).then((cache) => {
-      // console.log("caching shell files");
+      console.log("caching shell files");
       cache.addAll(cacheFiles);
     })
   );
@@ -25,7 +25,7 @@ self.addEventListener("fetch", (e) => {
   // console.log("Fetching");
   e.respondWith(
     caches.match(e.request).then((cacheRes) => {
-      console.log("opened cache");
+      // console.log(cacheRes);
       return cacheRes || fetch(e.request);
     })
   );
