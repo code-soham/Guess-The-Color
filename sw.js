@@ -1,4 +1,4 @@
-const cacheName = "guessIt-game_v1.1";
+const cacheName = "guessIt-game_v1.12";
 const cacheFiles = [
   "./",
   "./index.html",
